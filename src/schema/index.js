@@ -7,7 +7,7 @@ import addPost from './mutations/addPost'
 import addComment from './mutations/addPost'
 
 
-const schema = new GraphQLSchema({
+export default schema = new GraphQLSchema({
   query: new GraphQLObjectType({
     name: 'Root Query',
     fields: () => ({
