@@ -5,7 +5,7 @@ import {
 import { Post } from './Post'
 import { fakeDatabase as database } from '../../FakeDatabase'
 
-export const Author = GraphQLObjectType({
+export const Author = new GraphQLObjectType({
   name: "Author",
   description: "All details of an author on the Website",
   fields: () => ({

@@ -6,7 +6,7 @@ import {
   GraphQLInputObjectType
 } from 'graphql';
 
-export const Comment = GraphQLObjectType({
+export const Comment = new GraphQLObjectType({
   name: "Comment",
   description: "Details of the comment",
   fields: () => ({

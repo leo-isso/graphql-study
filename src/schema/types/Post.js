@@ -10,7 +10,7 @@ import { Author } from './Author'
 import { Comment } from './Comment'
 import { fakeDatabase as database } from '../../FakeDatabase'
 
-export const Comment = GraphQLObjectType({
+export const Post = new GraphQLObjectType({
   name: "Post",
   description: "Details of the Blog Post",
   fields: () => ({
