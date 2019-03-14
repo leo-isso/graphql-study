@@ -2,6 +2,8 @@ import {
   GraphQLObjectType,
   GraphQLString
 } from 'graphql';
+import { Post } from './Post'
+import { fakeDatabase as database } from '../../FakeDatabase'
 
 export const Author = GraphQLObjectType({
   name: "Author",
@@ -9,6 +11,11 @@ export const Author = GraphQLObjectType({
   fields: () => ({
     id: { type: GraphQLString },
     name: { type: GraphQLString },
-    email: { type: GraphQLString }
+    email: { type: GraphQLString },
+
+    posts: {
+      type: new GraphQLList(Post),
+      resolve: (author) => database.getPostsOfAuthor(author.id)
+    }
   })
 })
