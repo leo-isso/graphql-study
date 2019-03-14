@@ -1,3 +1,17 @@
 import { graphql } from 'graphql';
+import schema from './schema'
 
-console.log('chanã!')
+const query = `
+{
+  posts{
+    title,
+    author {
+      name
+    }
+  }
+}
+`
+
+graphql(schema, query)
+.then(result => console.log(JSON.stringify(result, null, 2)))
+.catch(err => console.log(err))
