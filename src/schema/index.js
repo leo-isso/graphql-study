@@ -1,4 +1,7 @@
-import { graphql } from 'graphql';
+import { 
+  GraphQLSchema,
+  GraphQLObjectType
+} from 'graphql';
 import posts from './queries/posts';
 import post from './queries/post';
 import author from './queries/author';
@@ -7,9 +10,9 @@ import addPost from './mutations/addPost'
 import addComment from './mutations/addPost'
 
 
-export default schema = new GraphQLSchema({
+const schema = new GraphQLSchema({
   query: new GraphQLObjectType({
-    name: 'Root Query',
+    name: 'RootQuery',
     fields: () => ({
       ...posts,
       ...post,
@@ -17,10 +20,12 @@ export default schema = new GraphQLSchema({
     })
   }),
   mutation: new GraphQLObjectType({
-    name: 'Root Mutation',
+    name: 'RootMutation',
     fields: () => ({
       ...addComment,
       ...addPost
     })
   })
 })
+
+export default schema;
