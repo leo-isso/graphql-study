@@ -1,6 +1,7 @@
 import { 
   GraphQLObjectType,
-  GraphQLString
+  GraphQLString,
+  GraphQLList
 } from 'graphql';
 import { Post } from './Post'
 import { fakeDatabase as database } from '../../FakeDatabase'
